@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  @media (min-width: 400px) {
-    background-color: red;
-  }
-`;
+export const Wrapper = styled.div``;
+
+export const Menu = styled.div``;

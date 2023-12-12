@@ -4,7 +4,7 @@ import * as S from "./styles";
 function Home() {
   return (
     <S.Wrapper>
-      <h1>Leonardo Lima</h1>
+      <S.Menu data-testid="testIdMenu"></S.Menu>
     </S.Wrapper>
   );
 }
