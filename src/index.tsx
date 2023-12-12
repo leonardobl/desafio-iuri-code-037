@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import Home from "./components/home";
 import { GlobalStyles } from "./global/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import { Theme } from "./global/Theme";
@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <GlobalStyles />
     <ThemeProvider theme={Theme}>
-      <App />
+      <Home />
     </ThemeProvider>
   </React.StrictMode>
 );
