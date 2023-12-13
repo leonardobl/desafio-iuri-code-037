@@ -2,4 +2,4 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div``;
 
-export const Menu = styled.div``;
+export const Menu = styled.nav``;
