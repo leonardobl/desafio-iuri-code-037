@@ -9,15 +9,29 @@ function Home() {
   const isDesktop = useMediaQuery(theme.breakpoints.up("md")); // above 900px
 
   return (
-    <S.Wrapper>
-      {isMobile && (
-        <S.Menu data-testid="menu-mobile">
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-        </S.Menu>
-      )}
-    </S.Wrapper>
+    <S.Container>
+      <S.Wrapper>
+        <S.Header>
+          <S.HeaderLeftSide>
+            {isMobile ? (
+              <S.MenuMobile data-testid="menu-mobile">
+                <img src="assets/imgs/User.svg" alt="" />
+                <img src="assets/imgs/Union.svg" alt="" />
+                <img src="assets/imgs/List.svg" alt="" />
+              </S.MenuMobile>
+            ) : (
+              <S.MenuDesktop>
+                <h1>DeskTop</h1>
+              </S.MenuDesktop>
+            )}
+
+            <S.Title>
+              <span>TeslaBank</span> Banco 100% digital
+            </S.Title>
+          </S.HeaderLeftSide>
+        </S.Header>
+      </S.Wrapper>
+    </S.Container>
   );
 }
 

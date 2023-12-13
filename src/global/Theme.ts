@@ -7,6 +7,6 @@ export const Theme = {
     support2: "#0bb07b",
     support3: "#ffce52",
     support4: "#f03d3d",
-    support5: "#f9f9f9",
+    support5: "#F2F4FD",
   },
 };
