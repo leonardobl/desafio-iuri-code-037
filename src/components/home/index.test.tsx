@@ -102,6 +102,35 @@ describe("Deve testar todo o ambiente mobile", () => {
 
     expect(button).toBeInTheDocument();
   });
+
+  it("Deve aprensetar 2 icones junto ao botao abrir conta", () => {
+    render(
+      <ThemeProvider theme={Theme}>
+        <Home />
+      </ThemeProvider>
+    );
+
+    const container = screen.getByTestId("wrapperButtons");
+
+    const icons = within(container).getAllByTestId("icon-plataform");
+    expect(icons).toHaveLength(2);
+  });
+
+  it("Nao deve aprensetar 2 icones junto ao botao abrir conta", () => {
+    render(
+      <ThemeProvider theme={Theme}>
+        <Home />
+      </ThemeProvider>
+    );
+
+    const container = screen.getByTestId("wrapperButtons");
+
+    const icons = within(container).getAllByTestId("icon-plataform");
+
+    icons.forEach((icon) => {
+      expect(icon).not.toBeVisible();
+    });
+  });
 });
 
 describe("Deve ter todo o ambiente desktop", () => {
@@ -180,5 +209,18 @@ describe("Deve ter todo o ambiente desktop", () => {
     const button = screen.getByRole("button", { name: /Abrir uma conta/ });
 
     expect(button).toBeInTheDocument();
+  });
+
+  it("Deve aprensetar 2 icones junto ao botao abrir conta", () => {
+    render(
+      <ThemeProvider theme={Theme}>
+        <Home />
+      </ThemeProvider>
+    );
+
+    const container = screen.getByTestId("wrapperButtons");
+
+    const icons = within(container).getAllByTestId("icon-plataform");
+    expect(icons).toHaveLength(2);
   });
 });

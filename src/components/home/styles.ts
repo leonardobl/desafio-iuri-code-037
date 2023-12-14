@@ -142,7 +142,22 @@ export const subTitle = styled.h3`
   }
 `;
 
-export const WrapperButtons = styled.div``;
+export const WrapperButtons = styled.div`
+  display: flex;
+  gap: 32px;
+  align-items: center;
+
+  & > img {
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    & > img {
+      visibility: hidden;
+      display: none;
+    }
+  }
+`;
 
 export const Button = styled.button`
   display: flex;
@@ -159,4 +174,8 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
 `;
