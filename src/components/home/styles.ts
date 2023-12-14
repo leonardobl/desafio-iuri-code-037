@@ -1,15 +1,10 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div<{ $isMobile: boolean }>`
+export const WrapperPage = styled.div<{ $isMobile: boolean }>`
   ${({ theme: { colors }, $isMobile }) => css`
     max-width: 1920px;
     margin: 0 auto;
-    padding: 32px 15px 0;
     position: relative;
-
-    @media (min-width: 400px) {
-      padding: 0;
-    }
 
     ${!$isMobile &&
     `&::before {
@@ -31,14 +26,20 @@ export const Container = styled.div<{ $isMobile: boolean }>`
   `}
 `;
 
-export const Wrapper = styled.div`
-  max-width: 1124px;
+export const WrapperContent = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
-export const Header = styled.header``;
+export const Header = styled.header`
+  max-width: 1200px;
+  padding: 50px 16px 0;
+  margin: 0 auto;
 
-export const HeaderLeftSide = styled.div``;
-export const HeaderRightSide = styled.div``;
+  @media (max-width: 600px) {
+    padding: 0;
+  }
+`;
 
 export const MenuMobile = styled.nav`
   ${({ theme: { colors } }) => css`
@@ -51,21 +52,78 @@ export const MenuMobile = styled.nav`
   `}
 `;
 
-export const MenuDesktop = styled.nav``;
+export const MenuDesktop = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 300px;
+`;
 
-export const MenuDesktopContentLeftSide = styled.ul``;
+export const WrapperSides = styled.div`
+  display: flex;
+
+  @media (max-width: 600px) {
+    padding: 0 16px;
+  }
+`;
+
+export const HeaderLeftSide = styled.div``;
+
+export const HeaderRightSide = styled.div`
+  @media (max-width: 600px) {
+    visibility: hidden;
+  }
+`;
+
+export const MenuDesktopContentLeftSide = styled.ul`
+  ${({ theme: { colors } }) => css`
+    display: flex;
+    list-style: none;
+    gap: 44px;
+    align-items: center;
+
+    li a {
+      display: flex;
+      gap: 10px;
+      text-decoration: none;
+      color: ${colors.dark20};
+      font-size: 18px;
+      font-weight: 500;
+    }
+  `}
+`;
+
+export const MenuDesktopContentRigthSide = styled.div`
+  ${({ theme: { colors } }) => css`
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: ${colors.support5};
+      font-size: 18px;
+      font-weight: 500;
+    }
+  `}
+`;
 
 export const Title = styled.h1`
   ${({ theme: { colors } }) => css`
     color: ${colors["brand-color"]};
+
+    font-size: 54px;
+    font-weight: 600;
 
     span {
       width: 100%;
       display: block;
     }
 
-    @media (min-width: 400px) {
-      font-size: 30px;
+    @media (max-width: 600px) {
+      font-size: 34px;
       font-weight: 600;
     }
   `}
