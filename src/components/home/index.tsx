@@ -54,6 +54,19 @@ export function Home() {
             <S.Title>
               <span>TeslaBank</span> Banco 100% digital
             </S.Title>
+            <S.subTitle>
+              Abrir uma conta digital nunca foi tão simples!
+            </S.subTitle>
+
+            <S.WrapperButtons data-testid="wrapperButtons">
+              <S.Button>
+                Abrir uma conta
+                <img
+                  src="assets/imgs/arrow-right.svg"
+                  alt="seta apontando para a direita"
+                />
+              </S.Button>
+            </S.WrapperButtons>
           </S.HeaderLeftSide>
           {!isMobile && (
             <S.HeaderRightSide data-testid="rightSideItem"></S.HeaderRightSide>

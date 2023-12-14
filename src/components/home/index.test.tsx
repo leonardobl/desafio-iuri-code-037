@@ -75,6 +75,33 @@ describe("Deve testar todo o ambiente mobile", () => {
 
     expect(rightSide).not.toBeInTheDocument();
   });
+
+  it("Deve apresentar um subtitulo com o texto 'Abrir uma conta digital nunca foi tão simples!'", () => {
+    render(
+      <ThemeProvider theme={Theme}>
+        <Home />
+      </ThemeProvider>
+    );
+
+    const subtitle = screen.getByRole("heading", {
+      level: 3,
+      name: "Abrir uma conta digital nunca foi tão simples!",
+    });
+
+    expect(subtitle).toBeInTheDocument();
+  });
+
+  it("Deve apresentar um botao com o titulo 'Abrir uma conta'", () => {
+    render(
+      <ThemeProvider theme={Theme}>
+        <Home />
+      </ThemeProvider>
+    );
+
+    const button = screen.getByRole("button", { name: /Abrir uma conta/ });
+
+    expect(button).toBeInTheDocument();
+  });
 });
 
 describe("Deve ter todo o ambiente desktop", () => {
@@ -128,13 +155,30 @@ describe("Deve ter todo o ambiente desktop", () => {
     expect(rigthSideElemente).toBeVisible();
   });
 
-  // it("Deve apresentar 2 imagens de cartões", () => {
-  //   render(
-  //     <ThemeProvider theme={Theme}>
-  //       <Home />
-  //     </ThemeProvider>
-  //   );
+  it("Deve apresentar um subtitulo com o texto 'Abrir uma conta digital nunca foi tão simples!'", () => {
+    render(
+      <ThemeProvider theme={Theme}>
+        <Home />
+      </ThemeProvider>
+    );
 
-  //   const rigthSideElemente = screen.getByTestId("rigthSideItem");
-  // });
+    const subtitle = screen.getByRole("heading", {
+      level: 3,
+      name: "Abrir uma conta digital nunca foi tão simples!",
+    });
+
+    expect(subtitle).toBeInTheDocument();
+  });
+
+  it("Deve apresentar um botao com o titulo 'Abrir uma conta'", () => {
+    render(
+      <ThemeProvider theme={Theme}>
+        <Home />
+      </ThemeProvider>
+    );
+
+    const button = screen.getByRole("button", { name: /Abrir uma conta/ });
+
+    expect(button).toBeInTheDocument();
+  });
 });

@@ -110,8 +110,9 @@ export const Title = styled.h1`
   ${({ theme: { colors } }) => css`
     color: ${colors["brand-color"]};
 
-    font-size: 54px;
+    font-size: 48px;
     font-weight: 600;
+    margin-bottom: 24px;
 
     span {
       width: 100%;
@@ -121,6 +122,41 @@ export const Title = styled.h1`
     @media (max-width: 600px) {
       font-size: 34px;
       font-weight: 600;
+      margin-bottom: 12px;
     }
   `}
+`;
+
+export const subTitle = styled.h3`
+  color: #333;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 80px;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+
+    margin-bottom: 32px;
+  }
+`;
+
+export const WrapperButtons = styled.div``;
+
+export const Button = styled.button`
+  display: flex;
+  padding: 18px 40px;
+  gap: 10px;
+  border-radius: 4px;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: linear-gradient(221deg, #eb3850 14.43%, #cb162e 85.28%);
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 `;
