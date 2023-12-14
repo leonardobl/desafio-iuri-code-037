@@ -71,9 +71,9 @@ describe("Deve testar todo o ambiente mobile", () => {
       </ThemeProvider>
     );
 
-    const rightSide = screen.getByTestId("rightSideItem");
+    const rightSide = screen.queryByTestId("rightSideItem");
 
-    expect(rightSide).not.toBeVisible();
+    expect(rightSide).not.toBeInTheDocument();
   });
 });
 

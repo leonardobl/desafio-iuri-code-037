@@ -55,7 +55,9 @@ export function Home() {
               <span>TeslaBank</span> Banco 100% digital
             </S.Title>
           </S.HeaderLeftSide>
-          <S.HeaderRightSide data-testid="rightSideItem"></S.HeaderRightSide>
+          {!isMobile && (
+            <S.HeaderRightSide data-testid="rightSideItem"></S.HeaderRightSide>
+          )}
         </S.WrapperSides>
       </S.Header>
 

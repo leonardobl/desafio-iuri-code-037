@@ -68,11 +68,7 @@ export const WrapperSides = styled.div`
 
 export const HeaderLeftSide = styled.div``;
 
-export const HeaderRightSide = styled.div`
-  @media (max-width: 600px) {
-    visibility: hidden;
-  }
-`;
+export const HeaderRightSide = styled.div``;
 
 export const MenuDesktopContentLeftSide = styled.ul`
   ${({ theme: { colors } }) => css`
