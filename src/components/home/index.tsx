@@ -9,7 +9,7 @@ function Home() {
   const isDesktop = useMediaQuery(theme.breakpoints.up("md")); // above 900px
 
   return (
-    <S.Container>
+    <S.Container $isMobile={isMobile}>
       <S.Wrapper>
         <S.Header>
           <S.HeaderLeftSide>
@@ -21,7 +21,29 @@ function Home() {
               </S.MenuMobile>
             ) : (
               <S.MenuDesktop>
-                <h1>DeskTop</h1>
+                <S.MenuDesktopContentLeftSide>
+                  <li>
+                    <img src="assets/imgs/Union.svg" alt="" />
+                  </li>
+                  <li>
+                    <a href="#">
+                      TeslaBank
+                      <img src="assets/imgs/arrow-down.svg" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Conta digital
+                      <img src="assets/imgs/arrow-down.svg" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Pra você
+                      <img src="assets/imgs/arrow-down.svg" alt="" />
+                    </a>
+                  </li>
+                </S.MenuDesktopContentLeftSide>
               </S.MenuDesktop>
             )}
 

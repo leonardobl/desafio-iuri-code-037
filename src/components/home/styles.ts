@@ -1,13 +1,18 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
-  ${({ theme: { colors } }) => css`
+export const Container = styled.div<{ $isMobile: boolean }>`
+  ${({ theme: { colors }, $isMobile }) => css`
     max-width: 1920px;
     margin: 0 auto;
     padding: 32px 15px 0;
     position: relative;
 
-    &::before {
+    @media (min-width: 400px) {
+      padding: 0;
+    }
+
+    ${!$isMobile &&
+    `&::before {
       content: "";
       display: block;
       height: 928px;
@@ -22,7 +27,7 @@ export const Container = styled.div`
         transparent 50%,
         ${colors["brand-color"]} 50%
       );
-    }
+    }`}
   `}
 `;
 
@@ -46,11 +51,9 @@ export const MenuMobile = styled.nav`
   `}
 `;
 
-export const MenuDesktop = styled.nav`
-  ${({ theme: { colors } }) => css`
-    padding: 35px 15px;
-  `}
-`;
+export const MenuDesktop = styled.nav``;
+
+export const MenuDesktopContentLeftSide = styled.ul``;
 
 export const Title = styled.h1`
   ${({ theme: { colors } }) => css`
