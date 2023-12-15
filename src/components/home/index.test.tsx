@@ -1,4 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import mediaQuery from "css-mediaquery";
 import { Home } from ".";
 import { ThemeProvider } from "styled-components";
@@ -110,26 +111,9 @@ describe("Deve testar todo o ambiente mobile", () => {
       </ThemeProvider>
     );
 
-    const container = screen.getByTestId("wrapperButtons");
+    const container = screen.getByTestId("wrapperIcons");
 
-    const icons = within(container).getAllByTestId("icon-plataform");
-    expect(icons).toHaveLength(2);
-  });
-
-  it("Nao deve aprensetar 2 icones junto ao botao abrir conta", () => {
-    render(
-      <ThemeProvider theme={Theme}>
-        <Home />
-      </ThemeProvider>
-    );
-
-    const container = screen.getByTestId("wrapperButtons");
-
-    const icons = within(container).getAllByTestId("icon-plataform");
-
-    icons.forEach((icon) => {
-      expect(icon).not.toBeVisible();
-    });
+    expect(container).not.toBeVisible();
   });
 });
 
@@ -218,9 +202,8 @@ describe("Deve ter todo o ambiente desktop", () => {
       </ThemeProvider>
     );
 
-    const container = screen.getByTestId("wrapperButtons");
+    const container = screen.getByTestId("wrapperIcons");
 
-    const icons = within(container).getAllByTestId("icon-plataform");
-    expect(icons).toHaveLength(2);
+    expect(container).toBeVisible();
   });
 });

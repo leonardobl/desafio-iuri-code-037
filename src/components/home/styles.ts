@@ -150,12 +150,14 @@ export const WrapperButtons = styled.div`
   & > img {
     cursor: pointer;
   }
+`;
+
+export const WrapperIcons = styled.div`
+  display: flex;
+  gap: 16px;
 
   @media (max-width: 600px) {
-    & > img {
-      visibility: hidden;
-      display: none;
-    }
+    display: none;
   }
 `;
 

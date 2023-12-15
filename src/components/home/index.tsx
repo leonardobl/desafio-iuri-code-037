@@ -66,16 +66,18 @@ export function Home() {
                   alt="seta apontando para a direita"
                 />
               </S.Button>
-              <img
-                src="assets/imgs/playstore.svg"
-                alt="playstore"
-                data-testid="icon-plataform"
-              />
-              <img
-                src="assets/imgs/apple.svg"
-                alt="apple"
-                data-testid="icon-plataform"
-              />
+              <S.WrapperIcons data-testid="wrapperIcons" hidden={isMobile}>
+                <img
+                  src="assets/imgs/playstore.svg"
+                  alt="playstore"
+                  data-testid="icon-plataform"
+                />
+                <img
+                  src="assets/imgs/apple.svg"
+                  alt="apple"
+                  data-testid="icon-plataform"
+                />
+              </S.WrapperIcons>
             </S.WrapperButtons>
           </S.HeaderLeftSide>
           {!isMobile && (
