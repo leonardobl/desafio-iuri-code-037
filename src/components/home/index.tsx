@@ -98,10 +98,12 @@ export function Home() {
             <img src="assets/imgs/heart.svg" alt="heart" />
           </S.SectionOpenAcountLeftSide>
         )}
-        <S.SectionOpenAcountRightSide></S.SectionOpenAcountRightSide>
+        <S.SectionOpenAcountRightSide data-testid="wrapperRightSideOpenAcount">
+          <h2>
+            Abra sua conta <span>gratuita!</span>
+          </h2>
+        </S.SectionOpenAcountRightSide>
       </S.SectionOpenAcount>
-
-      <S.WrapperContent></S.WrapperContent>
     </S.WrapperPage>
   );
 }

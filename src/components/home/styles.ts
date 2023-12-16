@@ -288,5 +288,28 @@ export const SectionOpenAcountLeftSide = styled.div`
 `;
 
 export const SectionOpenAcountRightSide = styled.div`
-  flex: 1;
+  ${({ theme: { colors } }) => css`
+    padding: 150px 16px 0;
+    flex: 1;
+
+    h2 {
+      color: #333;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    h2 > span {
+      color: ${colors["brand-color"]};
+    }
+
+    @media (max-width: 600px) {
+      padding: 50px 16px 0;
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  `}
 `;

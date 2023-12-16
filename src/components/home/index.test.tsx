@@ -160,6 +160,26 @@ describe("Deve testar todo o ambiente mobile", () => {
     it.todo("Deve apresentar '3 vantagens'");
 
     it.todo("Cada vantagens deve ter title e subtitle, alem da imagem");
+
+    it("Deve apresentar o titulo com o texto 'Abra sua conta gratuita!'", () => {
+      render(
+        <ThemeProvider theme={Theme}>
+          <Home />
+        </ThemeProvider>
+      );
+
+      const wrapperRightSideOpenAcount = screen.getByTestId(
+        "wrapperRightSideOpenAcount"
+      );
+
+      const title = within(wrapperRightSideOpenAcount).getByRole("heading", {
+        level: 2,
+        name: dataVatagens.title,
+      });
+
+      expect(wrapperRightSideOpenAcount).toBeInTheDocument();
+      expect(title).toBeInTheDocument();
+    });
   });
 });
 
@@ -286,7 +306,25 @@ describe("Deve ter todo o ambiente desktop", () => {
       expect(imgs).toHaveLength(4);
     });
 
-    it.todo("Deve apresentar o titulo comk o texto 'Abra sua conta gratuita!'");
+    it("Deve apresentar o titulo com o texto 'Abra sua conta gratuita!'", () => {
+      render(
+        <ThemeProvider theme={Theme}>
+          <Home />
+        </ThemeProvider>
+      );
+
+      const wrapperRightSideOpenAcount = screen.getByTestId(
+        "wrapperRightSideOpenAcount"
+      );
+
+      const title = within(wrapperRightSideOpenAcount).getByRole("heading", {
+        level: 2,
+        name: dataVatagens.title,
+      });
+
+      expect(wrapperRightSideOpenAcount).toBeInTheDocument();
+      expect(title).toBeInTheDocument();
+    });
     it.todo(
       "Deve apresentar o subtitle com o texto 'Envie e receba dinheiro de forma mais prática e rápida. Faça Pix, TEDs e transferências com agendamento para todos os bancos sem pagar nada.'"
     );
