@@ -24,6 +24,29 @@ function resizeScreenSize(width: number) {
   window.matchMedia = createMatchMedia(width);
 }
 
+const dataVatagens = {
+  title: "Abra sua conta gratuita!",
+  subtitle:
+    "Envie e receba dinheiro de forma mais prática e rápida. Faça Pix, TEDs e transferências com agendamento para todos os bancos sem pagar nada.",
+
+  options: [
+    {
+      title: "Seu dinheiro rendendo mais",
+      subtitle: "Rendem mais que a poupança e você resgata quando quiser",
+    },
+    {
+      title: "Conta digital 100% grátis",
+      subtitle:
+        "Transferências, boletos de depósito e outros serviços gratuitos",
+    },
+    {
+      title: "Cartão sem anuidade",
+      subtitle:
+        "Conta digital com cartão de crédito sem anuidade e sem complicação",
+    },
+  ],
+};
+
 describe("Deve testar todo o ambiente mobile", () => {
   beforeAll(() => resizeScreenSize(599));
   describe("Deve testar todo o header no ambiente mobile", () => {
@@ -115,6 +138,28 @@ describe("Deve testar todo o ambiente mobile", () => {
 
       expect(container).not.toBeVisible();
     });
+  });
+
+  describe("Deve testar toda a section de abertura de conta no ambiente mobile", () => {
+    it("Nao deve apresentar uma imagem de um smartphone", () => {
+      render(
+        <ThemeProvider theme={Theme}>
+          <Home />
+        </ThemeProvider>
+      );
+
+      const wrapperSmartphone = screen.queryByRole("wrapperImgsPhone");
+
+      expect(wrapperSmartphone).toBeNull();
+    });
+
+    it.todo("Deve apresentar o titulo comk o texto 'Abra sua conta gratuita!'");
+    it.todo(
+      "Deve apresentar o subtitle com o texto 'Envie e receba dinheiro de forma mais prática e rápida. Faça Pix, TEDs e transferências com agendamento para todos os bancos sem pagar nada.'"
+    );
+    it.todo("Deve apresentar '3 vantagens'");
+
+    it.todo("Cada vantagens deve ter title e subtitle, alem da imagem");
   });
 });
 
@@ -226,29 +271,6 @@ describe("Deve ter todo o ambiente desktop", () => {
   });
 
   describe("Deve testar toda a section de abertura de conta", () => {
-    const dataVatagens = {
-      title: "Abra sua conta gratuita!",
-      subtitle:
-        "Envie e receba dinheiro de forma mais prática e rápida. Faça Pix, TEDs e transferências com agendamento para todos os bancos sem pagar nada.",
-
-      options: [
-        {
-          title: "Seu dinheiro rendendo mais",
-          subtitle: "Rendem mais que a poupança e você resgata quando quiser",
-        },
-        {
-          title: "Conta digital 100% grátis",
-          subtitle:
-            "Transferências, boletos de depósito e outros serviços gratuitos",
-        },
-        {
-          title: "Cartão sem anuidade",
-          subtitle:
-            "Conta digital com cartão de crédito sem anuidade e sem complicação",
-        },
-      ],
-    };
-
     it("Deve apresentar uma imagem de um smartphone", () => {
       render(
         <ThemeProvider theme={Theme}>

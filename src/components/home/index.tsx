@@ -90,12 +90,14 @@ export function Home() {
       </S.Header>
 
       <S.SectionOpenAcount>
-        <S.SectionOpenAcountLeftSide data-testid="wrapperImgsPhone">
-          <img src="assets/imgs/mobile.svg" alt="smarthphone" />
-          <img src="assets/imgs/mouse-pointer.svg" alt="seta mouse" />
-          <img src="assets/imgs/check-circle.svg" alt="check-circle" />
-          <img src="assets/imgs/heart.svg" alt="heart" />
-        </S.SectionOpenAcountLeftSide>
+        {!isMobile && (
+          <S.SectionOpenAcountLeftSide data-testid="wrapperImgsPhone">
+            <img src="assets/imgs/mobile.svg" alt="smarthphone" />
+            <img src="assets/imgs/mouse-pointer.svg" alt="seta mouse" />
+            <img src="assets/imgs/check-circle.svg" alt="check-circle" />
+            <img src="assets/imgs/heart.svg" alt="heart" />
+          </S.SectionOpenAcountLeftSide>
+        )}
         <S.SectionOpenAcountRightSide></S.SectionOpenAcountRightSide>
       </S.SectionOpenAcount>
 
