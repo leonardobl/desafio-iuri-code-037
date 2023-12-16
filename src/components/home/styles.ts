@@ -5,6 +5,8 @@ export const WrapperPage = styled.div<{ $isMobile: boolean }>`
     max-width: 1920px;
     margin: 0 auto;
     position: relative;
+    z-index: 0;
+    background-color: ${colors.support5};
 
     ${!$isMobile &&
     `&::before {
@@ -16,6 +18,7 @@ export const WrapperPage = styled.div<{ $isMobile: boolean }>`
       top: 0;
       left: 0;
       z-index: -1;
+      
 
       background: linear-gradient(
         to right,
@@ -35,9 +38,12 @@ export const Header = styled.header`
   max-width: 1200px;
   padding: 50px 16px 0;
   margin: 0 auto;
+  height: 928px;
 
   @media (max-width: 600px) {
     padding: 0;
+    height: max-content;
+    padding-bottom: 100px;
   }
 `;
 
@@ -68,7 +74,50 @@ export const WrapperSides = styled.div`
 
 export const HeaderLeftSide = styled.div``;
 
-export const HeaderRightSide = styled.div``;
+export const HeaderRightSide = styled.div`
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    background: url("assets/imgs/Bar1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1000px;
+    height: 233px;
+    position: absolute;
+    left: -51px;
+    top: -50px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    background: url("assets/imgs/Bar2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1000px;
+    height: 233px;
+    position: absolute;
+    left: -51px;
+    bottom: -200px;
+  }
+`;
+
+export const Card1 = styled.img`
+  position: absolute;
+  width: 400px;
+  left: 250px;
+  top: -60px;
+  z-index: 1;
+`;
+
+export const Card2 = styled.img`
+  position: absolute;
+  width: 400px;
+  left: 500px;
+  top: 50px;
+`;
 
 export const MenuDesktopContentLeftSide = styled.ul`
   ${({ theme: { colors } }) => css`
@@ -93,6 +142,7 @@ export const MenuDesktopContentRigthSide = styled.div`
     display: flex;
     gap: 10px;
     align-items: center;
+    /* position: relative; */
 
     a {
       text-decoration: none;
@@ -154,7 +204,11 @@ export const WrapperButtons = styled.div`
 
 export const WrapperIcons = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 24px;
+
+  :last-child {
+    margin-top: -10px;
+  }
 
   @media (max-width: 600px) {
     display: none;
@@ -180,4 +234,59 @@ export const Button = styled.button`
   @media (max-width: 600px) {
     font-size: 16px;
   }
+`;
+
+export const SectionOpenAcount = styled.section`
+  display: flex;
+  background-color: #fff;
+  padding: 120px 0;
+
+  @media (max-width: 600px) {
+    padding: 40px 0;
+  }
+`;
+
+export const SectionOpenAcountLeftSide = styled.div`
+  flex: 1;
+  position: relative;
+
+  img {
+    display: block;
+    margin: auto;
+  }
+
+  :nth-child(2) {
+    position: absolute;
+    top: 260px;
+    right: 220px;
+
+    padding: 25px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 8px 25px 0px rgba(229, 29, 55, 0.1);
+  }
+  :nth-child(3) {
+    top: -20px;
+    left: 230px;
+
+    position: absolute;
+    padding: 25px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 8px 25px 0px rgba(229, 29, 55, 0.1);
+  }
+  :nth-child(4) {
+    bottom: 50px;
+    left: 230px;
+
+    position: absolute;
+    padding: 25px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 8px 25px 0px rgba(229, 29, 55, 0.1);
+  }
+`;
+
+export const SectionOpenAcountRightSide = styled.div`
+  flex: 1;
 `;

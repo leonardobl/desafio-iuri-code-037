@@ -81,10 +81,23 @@ export function Home() {
             </S.WrapperButtons>
           </S.HeaderLeftSide>
           {!isMobile && (
-            <S.HeaderRightSide data-testid="rightSideItem"></S.HeaderRightSide>
+            <S.HeaderRightSide data-testid="rightSideItem">
+              <S.Card1 src="assets/imgs/Card1.svg" />
+              <S.Card2 src="assets/imgs/Card2.svg" />
+            </S.HeaderRightSide>
           )}
         </S.WrapperSides>
       </S.Header>
+
+      <S.SectionOpenAcount>
+        <S.SectionOpenAcountLeftSide data-testid="wrapperImgsPhone">
+          <img src="assets/imgs/mobile.svg" alt="smarthphone" />
+          <img src="assets/imgs/mouse-pointer.svg" alt="seta mouse" />
+          <img src="assets/imgs/check-circle.svg" alt="check-circle" />
+          <img src="assets/imgs/heart.svg" alt="heart" />
+        </S.SectionOpenAcountLeftSide>
+        <S.SectionOpenAcountRightSide></S.SectionOpenAcountRightSide>
+      </S.SectionOpenAcount>
 
       <S.WrapperContent></S.WrapperContent>
     </S.WrapperPage>
